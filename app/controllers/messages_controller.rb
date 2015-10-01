@@ -1,8 +1,13 @@
 class MessagesController < ApplicationController
   
-  before_action :set_message, only: [:edit, :update]
+  before_action :set_message, only: [:edit, :update, :destroy]
   
   def edit
+  end
+  
+  def destroy
+    @message.destroy
+    redirect_to root_path, notice: 'メッセージを削除しました'
   end
   
   def update
