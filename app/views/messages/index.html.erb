@@ -1,22 +1,49 @@
+
+<hr />
+<%= form_for(Message.new) do |f| %>
+  名前:<br />
+  <%= f.text_field :name %>
+  <p />
+  内容:<br />
+  <%= f.text_area :body, :size=>"70x5" %>
+  <p />
+  <%= f.submit "投稿する", class:"btn btn-sm btn-primary" %>
+<% end %>
+
+<hr />
+
 <div class="panel panel-default">
   <div class="panel-heading">
     メッセージ一覧
   </div>
     
   <div class="panel-body">
-    <% @messages.each do |message| %>
-      <span class="label label-info"><%= message.name %></span>
-      <%= message.body %>
-      <br>
-    <% end %>
+    <div class="table-responsive">
+      <table class="table table-striped" border=0>
+        <thead>
+          <tr>
+            <th>番号</th>
+            <th>名前</th>
+            <th>内　容</th>
+          </tr>
+        </thead>
+        
+        <% num=0 %>
+        <% @messages.each do |message| %>
+          <% num+=1 %>
+          <tr>
+            <td>
+              <%= num %>
+            </td>
+            <td>
+              <%= message.name %>
+            </td>
+            <td>
+              <%= message.body %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
   </div>
 </div>
-
-<%= form_for(Message.new) do |f| %>
-  名前:
-  <%= f.text_field :name %>
-
-  内容:
-  <%= f.text_field :body %>
-  <%= f.submit class: "btn btn-sm btn-primary" %>
-<% end %>
