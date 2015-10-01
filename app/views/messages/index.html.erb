@@ -1,28 +1,7 @@
 
 <hr />
-<%= form_for(Message.new) do |f| %>
-
-  <% if @message.errors.present? %>
-    <div class="alert alert-danger">
-      <%= alert %>
-      <ul>
-        <% @message.errors.full_messages.each do |full_message| %>
-          <li>
-            <%= full_message %>
-          </li>
-        <% end %> 
-      </ul>
-    </div>
-  <% end %>
-  
-  名前:<br />
-  <%= f.text_field :name %>
-  <p />
-  内容:<br />
-  <%= f.text_area :body, :size=>"70x5" %>
-  <p />
-  <%= f.submit "投稿する", class:"btn btn-sm btn-primary" %>
-<% end %>
+<% #部分テンプレートを読み込んでいる %>
+<%= render 'form' %>
 
 <hr />
 
