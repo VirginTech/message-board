@@ -17,6 +17,7 @@
           <tr>
             <th>番号</th>
             <th>名前</th>
+            <th>年齢</th>
             <th>内　容</th>
             <th></th>
           </tr>
@@ -33,11 +34,14 @@
               <%= message.name %>
             </td>
             <td>
+              <%= message.age %>
+            </td>
+            <td>
               <%= message.body %>
             </td>
             <td align="right">
-              [<%= link_to "edit" , edit_message_path(message) %>]
-              [<%= link_to "destroy" , message , method: :delete, data: { confirm: '削除してもよろしいですか？' } %>]
+              [<%= link_to "編集" , edit_message_path(message) %>]
+              [<%= link_to "削除" , message , method: :delete, data: { confirm: '削除してもよろしいですか？' } %>]
             </td>
           </tr>
         <% end %>

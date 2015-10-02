@@ -14,8 +14,13 @@
   <% end %>
   
   名前:<br />
-  <%= f.text_field :name %>
+  <%= f.text_field :name, :size=>"30" %>
   <p />
+
+  年齢:<br />
+  <%= f.text_field :age, :size=>"5"%>
+  <p />
+  
   内容:<br />
   <%= f.text_area :body, :size=>"70x5" %>
   <p />
