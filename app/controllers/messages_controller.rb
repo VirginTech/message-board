@@ -22,7 +22,8 @@ class MessagesController < ApplicationController
   
   def index
     # Messageを全て取得する。
-    @messages = Message.all
+    #@messages = Message.all
+    @messages = Message.order(:created_at)
     @message = Message.new
   end
   
